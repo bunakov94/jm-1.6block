@@ -1,0 +1,235 @@
+.header {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    position: relative;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -.6px;
+    margin-bottom: 24px;
+    padding: 0 16px;
+
+    @media (min-width: $tablet) {
+      padding: 0 24px;
+    }
+
+    @media (min-width: $desktop-wide) {
+      margin-top: 42px;
+      padding: 0 0 0 35px;
+      flex-basis: 50%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 40px;
+      width: 4px;
+      background-color: $borderColor;
+    }
+  }
+
+  &__button-group {
+    display: none;
+
+    @media (min-width: $desktop-wide) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-basis: 50%;
+      margin-top: 42px;
+      padding-right: 34px;
+      height: 40px;
+    }
+  }
+  &__button-repair {
+    position: relative;
+
+    &:hover:before {
+      color: $pinkColor;
+    }
+
+    &::before {
+      position: absolute;
+      content: "Оставить заявку";
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -.2px;
+      width: 125px;
+      height: 40px;
+      right: 53px;
+      top: 8px;
+    }
+  }
+
+  &__button-check {
+    position: relative;
+    margin-left: 160px;
+
+    &:hover:before {
+      color: $pinkColor;
+    }
+
+    &::before {
+      position: absolute;
+      content: "Статус заказа";
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -.2px;
+      width: 125px;
+      height: 40px;
+      right: 48px;
+      top: 8px;
+    }
+  }
+}
+
+.header-bar {
+  display: flex;
+  height: 88px;
+  margin-bottom: 24px;
+  padding: 0 16px;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: $whiteColor;
+
+  @media (min-width: $tablet) {
+    padding: 0 24px;
+  }
+
+  @media (min-width: $desktop-wide) {
+    display: none;
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+  &__button {
+    &--menu-button {
+      margin-right: 17px;
+
+      @media (min-width: $tablet) {
+        position: relative;
+        margin-right: 40px;
+
+        &::after {
+          content: "";
+          width: 2px;
+          height: 32px;
+          background-color: $grayColor;
+          position: absolute;
+          right: -20px;
+          top: 4px;
+        }
+      }
+    }
+    &--call-button {
+    }
+    &--messages-button {
+      margin: 0 17px;
+    }
+    &--contacts-button {
+    }
+    &--repair-button {
+      margin-left: 17px;
+    }
+    &--check-button {
+      margin-left: 17px;
+    }
+  }
+  &__logo {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 2px;
+      height: 32px;
+      background-color: $grayColor;
+      position: absolute;
+      right: -17px;
+      top: 8px;
+
+      @media (min-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+  &__middle {
+    display: none;
+
+    @media (min-width: $tablet) {
+      position: relative;
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 20px;
+
+      &::after {
+        content: "";
+        width: 2px;
+        height: 32px;
+        background-color: $grayColor;
+        position: absolute;
+        right: 0;
+        top: 28px;
+      }
+    }
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+}
+.header-group {
+  display: flex;
+}
+.header-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  padding: 0 16px;
+  scrollbar-base-color: transparent;
+  flex-basis: 100%;
+  font-weight: 500;
+
+  @media (min-width: $tablet) {
+    padding: 0 24px;
+  }
+
+  @media (min-width: $desktop-wide) {
+    flex-wrap: wrap;
+  }
+  &__link {
+    white-space: nowrap;
+    padding: 8px 16px;
+
+    &--active {
+      border: 2px solid $borderColor;
+      border-radius: 6px;
+    }
+  }
+}
+.link {
+  color: $fontColorActive;
+  text-decoration: none;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: $borderColor;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    z-index: 1;
+    transition: width .2s linear;
+  }
+
+  &:not(.link--active):hover::after {
+    width: 100%;
+  }
+}

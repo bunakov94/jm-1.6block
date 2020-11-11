@@ -1,0 +1,249 @@
+.price {
+  &__header {
+    display: none;
+    color: $fontColorActive;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    margin: 31px 0 16px 40px;
+    flex-basis: 80%;
+
+    @media (min-width: $tablet) {
+      display: flex;
+    }
+    @media (min-width: $desktop-wide) {
+      margin: 31px 0 16px 52px;
+    }
+  }
+  &__description {
+    flex-basis: 50%;
+
+    @media (min-width: $tablet-wide) and (max-width: 1439px) {
+      flex-basis: 51%;
+    }
+  }
+  &__amount {
+    flex-basis: 14%;
+
+    @media (min-width: $desktop-wide) {
+      flex-basis: 14.5%;
+    }
+  }
+  &__time {
+    flex-basis: 15%;
+    margin-right: auto;
+  }
+  &__note {
+    margin: 16px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .2px;
+
+    @media (min-width: $tablet) {
+      width: 421px;
+    }
+  }
+  &__get-deal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 192px;
+    margin: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: -.2px;
+    white-space: pre-wrap;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 8px;
+      height: 11px;
+      top: 32px;
+      right: 70px;
+      background: url("../img/deal.png");
+
+      @media (min-width: $tablet) {
+        top: 8px;
+        right: -7px;
+      }
+    }
+
+    @media (min-width: $tablet) {
+      width: 300px;
+    }
+  }
+}
+
+.block-title {
+  &__price {
+    padding: 16px;
+  }
+}
+
+.price-slider {
+  position: relative;
+  padding: 16px 0 16px 8px;
+
+  @media (min-width: 480px) and (max-width: 767px){
+    padding: 16px 8px;
+  }
+
+  @media (min-width: $tablet) and (max-width: 1439px) {
+    padding: 16px 24px 16px 24px;
+  }
+
+  @media (min-width: $desktop-wide){
+    padding: 16px 32px 16px 32px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 15px;
+    z-index: 100;
+    height: 200px;
+    width: 24px;
+    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+
+    @media (min-width: 560px) {
+      display: none;
+    }
+  }
+  &__items {
+
+    @media (min-width: $tablet) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__item {
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 200px;
+    width: 260px;
+    background-color: $whiteColor;
+    font-size: 14px;
+    line-height: 16px;
+
+    @media (min-width: $tablet) {
+      position: relative;
+      width: 100%;
+      height: 64px;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      &:not(:last-child)::after {
+        position: absolute;
+        content: "";
+        width: 95%;
+        height: 1px;
+        bottom: 0;
+        left: 2.5%;
+        background-color: $grayColor;
+      }
+    }
+
+    @media (min-width: $desktop-wide) {
+      padding: 0 24px;
+    }
+  }
+  &__amount {
+    position: relative;
+    margin-top: 36px;
+    flex-basis: 100%;
+
+    @media (min-width: $tablet) {
+      position: relative;
+      margin: 0;
+      flex-basis: 15%;
+    }
+
+    &::before {
+      content: 'Цена';
+      position: absolute;
+      right: 0;
+      top: -18px;
+      z-index: 100;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+      color: $fontColorActive;
+      line-height: 16px;
+
+      @media (min-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+  &__description {
+    position: relative;
+    flex-basis: 100%;
+    margin-top: 20px;
+
+    @media (min-width: $tablet) {
+      margin: 0;
+      flex-basis: 53%;
+    }
+
+    &::before {
+      content: 'Ремонтные услуги';
+      position: absolute;
+      right: 0;
+      top: -18px;
+      z-index: 100;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+      color: $fontColorActive;
+      line-height: 16px;
+
+      @media (min-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+  &__time {
+    position: relative;
+    flex-basis: 40%;
+    margin-right: auto;
+    margin-top: 36px;
+    font-size: 14px;
+    line-height: 18px;
+
+    @media (min-width: $tablet) {
+      margin: 0;
+      flex-basis: 15%;
+    }
+
+    &::before {
+      content: 'Срок';
+      position: absolute;
+      right: 0;
+      top: -18px;
+      z-index: 100;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+      color: $fontColorActive;
+      line-height: 16px;
+
+      @media (min-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+  &__button {
+    margin-top: 20px;
+
+    @media (min-width: $tablet) {
+      margin-top: 0;
+      margin-left: auto;
+    }
+  }
+}

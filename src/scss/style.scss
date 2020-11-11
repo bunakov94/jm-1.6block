@@ -1,0 +1,130 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "includes/buttons/buttons";
+
+html {
+  font-size: $base-font-size;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: $font;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: #F2F2F2;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea {
+  vertical-align: middle;
+}
+
+textarea {
+  resize: none;
+}
+
+section {
+  position: relative;
+}
+
+input,
+select,
+button {
+  outline: none;
+}
+
+.container {
+  max-width: $content-size;
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  background-color: $bgColor;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content {
+  width: 100%;
+  transition-duration: .5s;
+
+  &--blured {
+    @media (min-width: $tablet){
+      filter: opacity(5%);
+    }
+  }
+
+  @media (min-width: $desktop-wide) {
+    width: calc(1440px - 320px);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+// Modules
+@import "includes/header/header";
+@import "includes/side-nav/side-nav";
+@import "includes/post/post";
+@import "includes/brands/brands";
+@import "includes/repair/repair";
+@import "includes/price/price";
+@import "includes/footer/footer";
+@import "includes/modals/fedback";
+@import "includes/modals/coll";

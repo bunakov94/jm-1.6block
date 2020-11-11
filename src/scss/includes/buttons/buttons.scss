@@ -1,0 +1,39 @@
+.button {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+
+  &__img {
+    margin: 0 auto;
+  }
+
+  &--circle {
+    height: 40px;
+    width: 40px;
+    background-color: $pinkColor;
+    border-radius: 50%;
+    filter: opacity(100%);
+    transition: filter .5s ease;
+
+    &:hover {
+      background-color: $litePinkColor;
+    }
+  }
+
+  &--long {
+    height: 32px;
+    width: 119px;
+    padding: 0 16px 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $pinkColor;
+    border-radius: 16px;
+    color: $whiteColor;
+    letter-spacing: -.15 px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
